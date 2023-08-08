@@ -1,5 +1,14 @@
 :root {
     --background: #c7eeff;
+    font-family: 'Roboto Mono';
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 32px;
 }
 
 body {
@@ -8,4 +17,146 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: var(--background);
+}
+
+.birthdayCard {
+    background-color: #fff;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 4s;
+}
+
+.birthdayCard:hover .cardFront {
+    transform: rotateY(-160deg);
+}
+
+.birthdayCard:hover .deco {
+    display: none;
+}
+
+.cardFront {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: .4s;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    width: 360px;
+    height: 600px;
+}
+
+.wrap-deco {
+    position: absolute;
+    top: -180px;
+    left: -210px;
+}
+
+.wrap-decoTwo {
+    transform: scaleX(-1);
+    position: absolute;
+    top: -230px;
+    left: 550px;
+}
+
+.decorations {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border: 3px solid #333;
+    border-radius: 50%;
+}
+
+.decorations:before,
+.decorations:after,
+.decorationsTwo:before,
+.decorationsTwo:after,
+.decorationsThree:before,
+.decorationsThree:after {
+    content: "";
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    width: 0;
+    height: 0;
+}
+
+.decorations:before {
+    border-top: 40px solid #f15bb5;
+    top: 297px;
+    left: 210px;
+    transform: rotate(-5deg);
+}
+
+.decorations:after {
+    border-top: 40px solid #f4d35e;
+    top: 288px;
+    left: 260px;
+    transform: rotate(-17deg);
+}
+
+.decorationsTwo:before {
+    border-top: 40px solid #00f5d4;
+    top: 268px;
+    left: 315px;
+    transform: rotate(-30deg);
+}
+
+.decorationsTwo:after,
+.decorationsThree:after {
+    border-top: 40px solid #9b5de5;
+    top: 238px;
+    left: 355px;
+    transform: rotate(-40deg);
+}
+
+.decorationsThree:before {
+    border-top: 40px solid #00bbf9;
+    top: 268px;
+    left: 315px;
+    transform: rotate(-30deg);
+}
+
+.dadHeadShot {
+    padding-top: 150px;
+    image-orientation: none;
+    height: auto;
+    width: auto;
+    max-height: 150px;
+    max-width: 150px;
+    backface-visibility: hidden;
+}
+
+.outside-text {
+    font-weight: 400;
+    font-size: 32px;
+    display: inline-block;
+    text-align: center;
+    backface-visibility: hidden;
+}
+
+.foot {
+    margin-top: auto;
+}
+
+.cardInside {
+    /* Keeps the card right below our original one */
+    position: absolute;
+    left:0;
+    top:0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index:-1;
+}
+
+.inside-text {
+    font-weight: 200;
+    font-style: italic;
+    font-size: 16px;
 }
