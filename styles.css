@@ -3,14 +3,6 @@
     font-family: 'Roboto Mono';
 }
 
-h3 {
-    font-size: 24px;
-}
-
-h2 {
-    font-size: 32px;
-}
-
 body {
     display: flex;
     align-items: center;
@@ -22,7 +14,6 @@ body {
 .birthdayCard {
     background-color: #fff;
     position: relative;
-    transform-style: preserve-3d;
     transform: perspective(2500px);
     transition: 4s;
 }
@@ -42,12 +33,28 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
     transition: .4s;
     transform-origin: left;
-    transform-style: preserve-3d;
     width: 360px;
     height: 600px;
+    transform-style: preserve-3d;
+}
+
+.deco {
+    position: absolute;
+    background-color: transparent;
+    padding: 30px;
+    transition: .4s;
+    transform-origin: left;
+    width: 360px;
+    height: 600px;
+    overflow: hidden;
+    z-index: -3;
+    top: 0;
+}
+
+.text {
+    backface-visibility: hidden;
 }
 
 .wrap-deco {
@@ -139,8 +146,17 @@ body {
     backface-visibility: hidden;
 }
 
+.outside-text h2 {
+    font-size: 24px;
+}
+
+.outside-text h3 {
+    font-size: 32px;
+}
+
 .foot {
     margin-top: auto;
+    backface-visibility: hidden;
 }
 
 .cardInside {
@@ -160,3 +176,4 @@ body {
     font-style: italic;
     font-size: 16px;
 }
+
