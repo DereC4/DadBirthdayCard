@@ -38,6 +38,7 @@ body {
     width: 360px;
     height: 600px;
     transform-style: preserve-3d;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
 }
 
 .deco {
@@ -164,16 +165,208 @@ body {
     position: absolute;
     left:0;
     top:0;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index:-1;
+    width: 360px;
+    height: 600px;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
 }
 
 .inside-text {
     font-weight: 200;
     font-style: italic;
     font-size: 16px;
+    text-align: center;
+}
+
+.cardInside p {
+    font-style: italic;
+    font-weight: 500;
+}
+
+@media only screen 
+   and (max-width : 600px) {
+    body {
+        height: auto;
+    }
+    
+    .birthdayCard {
+        background-color: #fff;
+        position: relative;
+        transform: perspective(2500px);
+        transition: 4s;
+    }
+    
+    .birthdayCard:hover .cardFront {
+        transform: rotateY(-160deg);
+    }
+    
+    .birthdayCard:hover .deco {
+        display: none;
+    }
+    
+    .cardFront {
+        position: relative;
+        background-color: #fff;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: .4s;
+        transform-origin: left;
+        width: 360px;
+        height: 600px;
+        transform-style: preserve-3d;
+        box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+    }
+    
+    .deco {
+        position: absolute;
+        background-color: transparent;
+        padding: 30px;
+        transition: .4s;
+        transform-origin: left;
+        width: 360px;
+        height: 600px;
+        overflow: hidden;
+        z-index: -3;
+        top: 0;
+    }
+    
+    .text {
+        backface-visibility: hidden;
+    }
+    
+    .wrap-deco {
+        position: absolute;
+        top: -180px;
+        left: -210px;
+    }
+    
+    .wrap-decoTwo {
+        transform: scaleX(-1);
+        position: absolute;
+        top: -230px;
+        left: 550px;
+    }
+    
+    .decorations {
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        border: 3px solid #333;
+        border-radius: 50%;
+    }
+    
+    .decorations:before,
+    .decorations:after,
+    .decorationsTwo:before,
+    .decorationsTwo:after,
+    .decorationsThree:before,
+    .decorationsThree:after {
+        content: "";
+        position: absolute;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        width: 0;
+        height: 0;
+    }
+    
+    .decorations:before {
+        border-top: 40px solid #f15bb5;
+        top: 297px;
+        left: 210px;
+        transform: rotate(-5deg);
+    }
+    
+    .decorations:after {
+        border-top: 40px solid #f4d35e;
+        top: 288px;
+        left: 260px;
+        transform: rotate(-17deg);
+    }
+    
+    .decorationsTwo:before {
+        border-top: 40px solid #00f5d4;
+        top: 268px;
+        left: 315px;
+        transform: rotate(-30deg);
+    }
+    
+    .decorationsTwo:after,
+    .decorationsThree:after {
+        border-top: 40px solid #9b5de5;
+        top: 238px;
+        left: 355px;
+        transform: rotate(-40deg);
+    }
+    
+    .decorationsThree:before {
+        border-top: 40px solid #00bbf9;
+        top: 268px;
+        left: 315px;
+        transform: rotate(-30deg);
+    }
+    
+    .dadHeadShot {
+        padding-top: 150px;
+        image-orientation: none;
+        height: auto;
+        width: auto;
+        max-height: 150px;
+        max-width: 150px;
+        backface-visibility: hidden;
+    }
+    
+    .outside-text {
+        font-weight: 400;
+        font-size: 32px;
+        display: inline-block;
+        text-align: center;
+        backface-visibility: hidden;
+    }
+    
+    .outside-text h2 {
+        font-size: 24px;
+    }
+    
+    .outside-text h3 {
+        font-size: 32px;
+    }
+    
+    .foot {
+        margin-top: auto;
+        backface-visibility: hidden;
+    }
+    
+    .cardInside {
+        /* Keeps the card right below our original one */
+        position: absolute;
+        left:0;
+        top:0;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index:-1;
+        width: 360px;
+        height: 600px;
+        box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+    }
+    
+    .inside-text {
+        font-weight: 200;
+        font-style: italic;
+        font-size: 16px;
+        text-align: center;
+    }
+    
+    .cardInside p {
+        font-style: italic;
+        font-weight: 500;
+    }
 }
 
